@@ -1,11 +1,9 @@
 #megoldas
-def eredmeny(jatekos: [int], gepl: [int]):
-    if lapok_osszege(jatekos) > 21:
-        print("Játékos vesztett")
-    if gep_pont > 21:
-    if lapok_osszege(gepl) > 21:
-        print("Gép vesztett")
-
+def pontok(lap)->int:
+    pontok:int = 0
+    for i in range(len(lap)):
+        pontok += lap[i];
+    return pontok
 
 def osszeg(cds: [int]) -> int:
     pts: int = 0
