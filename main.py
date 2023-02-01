@@ -1,4 +1,9 @@
 #megoldas
+def pontok(lap)->int:
+    pontok:int = 0
+    for i in range(len(lap)):
+        pontok += lap[i];
+    return pontok
 def eredmeny(egy, ketto):
     napok = pontok(egy)
     jatekos = pontok(ketto)
@@ -10,10 +15,22 @@ def eredmeny(egy, ketto):
         return "Gép vesztett"
     else:
         return "Játékos vesztett"
-def osszeg(cds: [int]) -> int:
+def teszt():
+    tesztek()
+def tesztek():
+    napok=[2,3,10]
+    jatekos=[20,3]
+    eredmeny="nyert"
+    kapott=eredmeny(napok,jatekos)
+    if kapott == eredmeny:
+        print("sikeres")
+    else:
+        print("nem sikerult")
+teszt()
+def lapok_osszege(lap: [int]) -> int:
     pts: int = 0
-    for i in range(len(cds)):
-        pts += cds[i]
+    for i in range(len(lap)):
+        pts += lap[i]
     return pts
 
 #teszt_esetek
