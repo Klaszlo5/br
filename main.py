@@ -32,12 +32,19 @@ def lapok_osszege(lap: [int]) -> int:
     for i in range(len(lap)):
         pts += lap[i]
     return pts
-
-
-def tesztveszit():
-    print("sikertelen" if eredmeny([6, 9, 2], [12, 3, 3]) == "Gép vesztett")
-
-
-def tesztnyer():
-    print("sikeres" if eredmeny([6, 9, 2], [12, 3, 3]) == "Gép nyert")
+def tesztveszit(egy,ketto):
+    if eredmeny([egy, ketto], [egy, ketto]):
+        print("vesztett")
+def tesztnyer(egy,ketto):
+    if eredmeny([egy,ketto], [egy,ketto]):
+        print("nyert")
+def gep(jatekos,gep):
+    vart_eredmeny: str = "Gép vesztett"
+    kapott_eredmeny: str = eredmeny(jatekos, gep)
+    if (vart_eredmeny == kapott_eredmeny)
+        print("sikeres")
+        tesztnyer()
+    else:
+        print("sikertelen")
+        tesztveszit()
 #teszt_esetek
