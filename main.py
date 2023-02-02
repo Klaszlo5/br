@@ -4,17 +4,28 @@ def pontok(lap)->int:
     for i in range(len(lap)):
         pontok += lap[i];
     return pontok
-def eredmeny(egy, ketto):
-    napok = pontok(egy)
-    jatekos = pontok(ketto)
-    for jatekos in range(napok):
-        napok[jatekos] += napok[jatekos]
-    if napok > 21 and jatekos > 21:
-        print("nyer")
-    elif napok > 21:
-        return "Gép vesztett"
-    else:
-        return "Játékos vesztett"
+def eredmeny(egy,ketto):
+    pcerte = pontok(ketto)
+    usrerte = pontok(egy)
+    if pcerte <= 22 and usrerte <= 20:
+        if usrerte > pcerte:
+            eredmny = "user nyert"
+        elif pcerte > usrerte:
+            eredmny = "pc nyert"
+        elif usrerte == pcerte:
+            if len(egy) < len(ketto):
+                eredmny = "user nyert"
+            elif len(egy) > len(ketto):
+                eredmny = "pc nyert"
+            else:
+                eredmny = "Döntetlen"
+    elif usrerte > 20:
+        eredmny = "user vesztett"
+    elif pcerte > 20:
+        eredmny = "pc vesztett"
+    elif usrerte > 22 and pcerte > 20:
+        eredmny = "nemnyert"
+    return eredmny
 def teszt():
     tesztek()
 def tesztek():
@@ -35,9 +46,11 @@ def lapok_osszege(lap: [int]) -> int:
 def tesztveszit(egy,ketto):
     if eredmeny([egy, ketto], [egy, ketto]):
         print("vesztett")
+    return tesztveszit
 def tesztnyer(egy,ketto):
     if eredmeny([egy,ketto], [egy,ketto]):
         print("nyert")
+    return tesztnyer
 def gepteszt(jatekos,gep):
     vart_eredmeny: str = "Gép vesztett"
     kapott_eredmeny: str = eredmeny(jatekos, gep)
@@ -46,7 +59,7 @@ def gepteszt(jatekos,gep):
         tesztnyer()
     else:
         print("sikertelen")
-        tesztveszit()
+    return gepteszt
 def teszts(jatekos,gep):
     vart_eredmeny: str = "Gép vesztett"
     kapott_eredmeny: str = eredmeny(jatekos, gep)
@@ -55,7 +68,7 @@ def teszts(jatekos,gep):
         tesztnyer()
     else:
         print("sikertelen")
-teszts()
+    return teszts
 def tesztes(jatekos,gep):
     vart_eredmeny: str = "Döntetlen"
     kapott_eredmeny: str = eredmeny(jatekos, gep)
@@ -64,7 +77,7 @@ def tesztes(jatekos,gep):
         tesztnyer()
     else:
         print("sikertelen")
-tesztes()
+    return tesztes
 def tesztesst(jatekos,gep):
     vart_eredmeny: str = "Nyert"
     kapott_eredmeny: str = eredmeny(jatekos, gep)
@@ -73,7 +86,7 @@ def tesztesst(jatekos,gep):
         tesztnyer()
     else:
         print("sikertelen")
-tesztesst()
+    return tesztesst
 
 def trrt(jatekos,gep):
     vart_eredmeny: str = "Nyert"
@@ -83,6 +96,16 @@ def trrt(jatekos,gep):
         tesztnyer()
     else:
         print("sikertelen")
-trrt()
-
+    return trrt
+def nyg():
+    pontok()
+    eredmeny()
+    tesztek()
+    teszt()
+    teszts()
+    tesztesst()
+    tesztes()
+    tesztnyer()
+    tesztveszit()
+nyg()
 #teszt_esetek
