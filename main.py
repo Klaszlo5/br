@@ -38,13 +38,51 @@ def tesztveszit(egy,ketto):
 def tesztnyer(egy,ketto):
     if eredmeny([egy,ketto], [egy,ketto]):
         print("nyert")
-def gep(jatekos,gep):
+def gepteszt(jatekos,gep):
     vart_eredmeny: str = "Gép vesztett"
     kapott_eredmeny: str = eredmeny(jatekos, gep)
-    if (vart_eredmeny == kapott_eredmeny)
+    if (vart_eredmeny[1,3,2] == kapott_eredmeny[1,3,1]):
         print("sikeres")
         tesztnyer()
     else:
         print("sikertelen")
         tesztveszit()
+def teszts(jatekos,gep):
+    vart_eredmeny: str = "Gép vesztett"
+    kapott_eredmeny: str = eredmeny(jatekos, gep)
+    if (vart_eredmeny[2,5,3] == kapott_eredmeny[6,5,3]):
+        print("sikeres")
+        tesztnyer()
+    else:
+        print("sikertelen")
+teszts()
+def tesztes(jatekos,gep):
+    vart_eredmeny: str = "Döntetlen"
+    kapott_eredmeny: str = eredmeny(jatekos, gep)
+    if (vart_eredmeny[4,2,3] == kapott_eredmeny[4,2,3]):
+        print("sikeres")
+        tesztnyer()
+    else:
+        print("sikertelen")
+tesztes()
+def tesztesst(jatekos,gep):
+    vart_eredmeny: str = "Nyert"
+    kapott_eredmeny: str = eredmeny(jatekos, gep)
+    if (vart_eredmeny[6,7,3] == kapott_eredmeny[6,7,2]):
+        print("sikeres")
+        tesztnyer()
+    else:
+        print("sikertelen")
+tesztesst()
+
+def trrt(jatekos,gep):
+    vart_eredmeny: str = "Nyert"
+    kapott_eredmeny: str = eredmeny(jatekos, gep)
+    if (vart_eredmeny[6,9,3] == kapott_eredmeny[6,9,3]):
+        print("sikeres")
+        tesztnyer()
+    else:
+        print("sikertelen")
+trrt()
+
 #teszt_esetek
