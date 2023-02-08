@@ -1,9 +1,11 @@
 import random
+#kesz munka
 def szamol(kartyk):
     ret = 0
     for i in range(len(kartyk)):
         ret += kartyk[i]
     return ret
+#tesztalapok
 def osszegz(kartyk):
     kezben = []
     for i in range(2):
@@ -66,6 +68,7 @@ def talal(kezben):
 	if kartyk == 14:kartyk = "A"
 	kezben.append(kartyk)
 	return kezben
+#tesztesetek
 def jatekos1veszitnagyobb():
     jatekos = [10,10,5]
     jatekos2 = [5,10]
